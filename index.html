@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng Nhập</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      // Hàm kiểm tra tên và mật khẩu
+      function validateLogin(event) {
+        event.preventDefault(); // Ngừng việc gửi form (tránh tải lại trang)
+
+        // Lấy giá trị nhập vào từ form
+        const username = document.getElementById("fullname").value;
+        const password = document.getElementById("password").value;
+
+        // Đặt tên và mật khẩu chính xác
+        const correctUsername = "Lê thành trí";
+        const correctPassword = "20/11/2024";
+
+        // Kiểm tra tên và mật khẩu
+        if (username === correctUsername && password === correctPassword) {
+          // Nếu đúng, chuyển hướng tới trang tiếp theo
+          window.location.href = "/chucthay20/11.html"; // Thay đổi URL này theo yêu cầu
+        } else {
+          // Nếu sai, thông báo lỗi
+          alert("Tên đăng nhập hoặc mật khẩu không đúng!");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="Login">
+      <form onsubmit="validateLogin(event)">
+        <h1>Đăng Nhập</h1>
+
+        <label for="fullname">Họ và tên</label>
+        <input type="text" id="fullname" name="fullname" required />
+
+        <label for="password">Mật khẩu</label>
+        <input type="password" id="password" name="password" required />
+
+        <button type="submit">Tiếp</button>
+      </form>
+    </div>
+  </body>
+</html>
